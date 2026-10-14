@@ -103,8 +103,8 @@ html:has(.still-toggle:checked) .reveal, html:has(.still-toggle:checked) .intro 
 .hero { position: relative; padding: 60px 0 48px; overflow-x: clip; }
 .hero > .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 40px; align-items: center; }
 .hero-top { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
-.badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 10px; border-radius: 999px; background: rgba(255, 196, 107, 0.1); border: 1px solid rgba(255, 196, 107, 0.24); color: var(--amber); font-size: 13px; font-weight: 700; }
-.badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); animation: ping 2.4s ease-out infinite; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 10px; border-radius: 999px; background: rgba(197, 193, 253, 0.1); border: 1px solid rgba(197, 193, 253, 0.26); color: var(--accent); font-size: 13px; font-weight: 700; }
+.badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: ping-a 2.4s ease-out infinite; }
 .display { font-size: clamp(56px, 8.2vw, 112px); line-height: 0.98; letter-spacing: -0.052em; font-weight: 800; margin: 28px 0 26px; }
 .display .line { display: block; overflow: hidden; padding: 0 0.04em 0.08em 0; margin-bottom: -0.08em; }
 .display .line > span { display: inline-block; }
