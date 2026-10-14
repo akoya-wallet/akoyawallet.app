@@ -9,7 +9,8 @@ wallet's website is a phishing target, so it should be easy to audit and hard to
 |---|---|
 | `index.html` | English page |
 | `zh/index.html` | Chinese page (keep in sync with the English one) |
-| `assets/site.css` | All styles. Colours mirror the extension's `src/ui/styles.css` |
+| `assets/site.css` | All styles and every animation (pure CSS, including the "Pause motion" toggle). Colours mirror the extension's `src/ui/styles.css` |
+| `assets/fonts/` | Manrope variable font, self-hosted (SIL OFL, see `OFL.txt`) |
 | `assets/` | Brand mark and lockup (© PRLFlipBTC, not MIT) |
 | `og.png` | 1200×630 social preview |
 | `CNAME` | Custom domain for GitHub Pages |
@@ -25,11 +26,17 @@ Then open <http://127.0.0.1:5288/>.
 
 ## Deploy
 
-Hosted on GitHub Pages from `main` (`/`). A push to `main` is a deploy. DNS lives on Cloudflare as DNS-only
-(grey cloud) records pointing at GitHub Pages, and GitHub issues the TLS certificate.
+GitHub Pages serves `main` (`/`), so a push to `main` is a deploy. Cloudflare sits in front as a proxy
+(orange cloud). It terminates TLS with its own certificate and adds the security headers through a Transform
+Rule ("akoyawallet.app security headers": CSP, HSTS, X-Frame-Options and others). SSL mode is Full, minimum
+TLS is 1.2, and Always Use HTTPS is on.
 
-GitHub Pages can't send custom headers, so the CSP is set with a `<meta>` tag in every page. `.app` is on the
-HSTS preload list, so HTTPS is enforced by browsers regardless.
+GitHub's own certificate for the custom domain was stuck in its queue for over an hour on 2026-10-14, which is
+why Cloudflare's proxy is used. Because Cloudflare doesn't verify the GitHub origin certificate, the
+Cloudflare-to-GitHub hop isn't hostname-verified.
+
+If you change the CSP, change it in both places: the `<meta>` tag in each page and the Cloudflare Transform
+Rule. Browsers enforce both.
 
 ## Keep in sync
 
