@@ -1,0 +1,6 @@
+Contact: mailto:contact@akoyawallet.app
+Contact: https://github.com/akoya-wallet/akoya-extension/security/advisories/new
+Expires: 2027-10-14T00:00:00.000Z
+Preferred-Languages: en, zh
+Canonical: https://akoyawallet.app/.well-known/security.txt
+Policy: https://github.com/akoya-wallet/akoya-extension/blob/main/SECURITY.md

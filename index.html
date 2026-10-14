@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Akoya — open-source wallet for Pearl (PRL)</title>
+  <meta name="description" content="Akoya is a self-custodial, open-source Chrome extension wallet for Pearl (PRL). Your keys stay in your browser, and every line that touches them is public.">
+  <link rel="canonical" href="https://akoyawallet.app/">
+  <link rel="alternate" hreflang="en" href="https://akoyawallet.app/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://akoyawallet.app/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://akoyawallet.app/">
+  <meta name="theme-color" content="#11172A">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Akoya">
+  <meta property="og:url" content="https://akoyawallet.app/">
+  <meta property="og:title" content="Akoya — open-source wallet for Pearl (PRL)">
+  <meta property="og:description" content="Self-custody for Pearl, right in your browser. Open source, no trackers, same addresses as the official Pearl Wallet.">
+  <meta property="og:image" content="https://akoyawallet.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Akoya home"><img src="/assets/lockup.svg" alt="Akoya" width="88" height="26"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#compatibility">Compatibility</a>
+      <a href="#security">Security</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="lang" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+    <a class="btn sm" href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ hero -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge"><span class="dot"></span>Alpha · unaudited · use small amounts</span>
+      <h1>Self-custody for <span class="nacre">Pearl</span>, right in your browser.</h1>
+      <p class="lede">Akoya is an open-source Chrome extension wallet for PRL. Your keys never leave your device, and every line of code that touches them is public.</p>
+      <div class="cta">
+        <a class="btn primary" href="#install">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
+          Install Akoya
+        </a>
+        <a class="btn" href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          Read the source
+        </a>
+      </div>
+      <p class="fine">Free and MIT-licensed · Chrome, Brave, Edge · by PRLFlipBTC, not affiliated with Pearl Research Labs</p>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="orb"></div>
+      <img class="crescent" src="/assets/mark.svg" alt="">
+      <div class="popup">
+        <div class="bar">
+          <span class="acct"><span class="avatar">M</span>Main wallet</span>
+          <span class="pill">Mainnet</span>
+          <span class="grow"></span>
+          <span class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8M21 3v5h-5"/></svg></span>
+          <span class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        </div>
+        <div class="balance">
+          <div><span class="amount">1,284.5</span><span class="unit">PRL</span></div>
+          <div class="sub">12.5 PRL mining reward maturing</div>
+        </div>
+        <div class="actions">
+          <span class="action"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>Receive</span>
+          <span class="action"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>Send</span>
+          <span class="action"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></span>Copy address</span>
+        </div>
+        <div class="sect"><span>Recent activity</span><span>All 38</span></div>
+        <div class="list">
+          <div class="item">
+            <span class="tx mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5l5 5M3 21l6-1.5L19.5 9 15 4.5 4.5 15z"/></svg></span>
+            <div class="grow"><div class="t">Mining reward</div><div class="m">immature · 2h ago</div></div>
+            <div class="v">+12.5</div>
+          </div>
+          <div class="item">
+            <span class="tx in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>
+            <div class="grow"><div class="t">Received</div><div class="m">prl1p…7hx2 · 1d ago</div></div>
+            <div class="v in">+250</div>
+          </div>
+          <div class="item">
+            <span class="tx out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>
+            <div class="grow"><div class="t">Sent</div><div class="m">prl1p…d0ka · 3d ago</div></div>
+            <div class="v">−40.25</div>
+          </div>
+        </div>
+        <div class="tabs">
+          <span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Activity</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Settings</span>
+        </div>
+      </div>
+      <p class="caption">Illustration. The interface is Chinese today; English ships before 1.0.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ proof strip -->
+<div class="strip">
+  <ul>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg><div><b>Open source</b>MIT-licensed, every line public</div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><path d="M3 3l18 18"/></svg><div><b>No trackers</b>No analytics, no accounts</div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div><b>Argon2id + AES-256</b>Encrypted local vault</div></li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Reproducible builds</b>Checksums + SLSA provenance</div></li>
+  </ul>
+</div>
+
+<!-- ============================================================ features -->
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Features</span>
+      <h2>Everything you need for PRL. Nothing you don't.</h2>
+      <p class="lede">A small, focused wallet: hold, receive, and send Pearl, built by people who mine it.</p>
+    </div>
+    <div class="grid3">
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Matches the official wallet</h3>
+        <p>Import your phrase and see exactly the addresses Pearl Wallet and oyster show, quirks included.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
+        <h3>Send with full review</h3>
+        <p>Send to Taproot or P2MR addresses. Every output and the exact fee are shown before you sign.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5l5 5M3 21l6-1.5L19.5 9 15 4.5 4.5 15z"/></svg></div>
+        <h3>Made for miners</h3>
+        <p>Coinbase rewards are tracked until they mature, so your balance shows what you can actually spend.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+        <h3>Receive with a QR code</h3>
+        <p>QR codes are rendered locally. A fresh receive address is always one click away.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Many wallets, two networks</h3>
+        <p>Keep several wallets side by side and switch between Mainnet and Testnet2.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg></div>
+        <h3>Your own indexer</h3>
+        <p>Point Akoya at any Blockbook server you trust. Import BIP39 phrases or an oyster hex seed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ compatibility -->
+<section class="block compat" id="compatibility">
+  <div class="wrap split">
+    <div class="head">
+      <span class="eyebrow">Compatibility</span>
+      <h2>The same addresses as the official Pearl Wallet.</h2>
+      <p class="lede">oyster, Pearl's reference wallet, derives keys with a non-standard step. For about 1 in 100 recovery phrases, a standard BIP32 wallet shows different addresses and your coins seem to vanish.</p>
+      <p class="lede">Akoya reproduces oyster's behaviour by default, pinned by test vectors taken from Pearl's own Go tests. Standard BIP32 is still there under <em>Advanced</em>.</p>
+      <dl class="specs">
+        <dt>Derivation</dt><dd>m/86'/808276'/0'/{0,1}/i</dd>
+        <dt>Addresses</dt><dd>bech32m · prl1p… / tprl1p…</dd>
+        <dt>Signatures</dt><dd>BIP340 Schnorr · BIP341 sighash</dd>
+        <dt>Units</dt><dd>1 PRL = 10⁸ grain</dd>
+      </dl>
+    </div>
+    <div class="diagram" role="img" aria-label="The same recovery phrase gives identical addresses in oyster and Akoya, but a different address in a standard BIP32 wallet for about 1% of phrases.">
+      <div class="phrase"><b>Your recovery phrase</b>•••••• •••••• •••••• •••••• •••••• •••••• ••••••</div>
+      <div class="arrow"></div>
+      <div class="rows">
+        <div class="row ok"><span class="who">Pearl Wallet / oyster<small>reference implementation</small></span><code>prl1p8x…3fq9</code><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="row ok akoya"><span class="who">Akoya<small>oyster-compatible mode (default)</small></span><code>prl1p8x…3fq9</code><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="row bad"><span class="who">Typical BIP32 wallet<small>standard derivation</small></span><code>prl1pm2…v07k</code><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+      </div>
+      <p class="note">Happens when a parent private key begins with a 0x00 byte, roughly 1% of phrases. Addresses shortened for illustration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ security -->
+<section class="block" id="security">
+  <div class="wrap split">
+    <div class="head">
+      <span class="eyebrow">Security</span>
+      <h2>Designed so you don't have to trust us.</h2>
+      <p class="lede">Akoya is built for the threats a browser wallet actually faces: malicious pages, lying servers, and tampered builds. The design is written down, and so are its limits.</p>
+      <div class="links">
+        <a class="btn sm" href="https://github.com/akoya-wallet/akoya-extension/blob/main/THREAT_MODEL.md" rel="noopener">Threat model</a>
+        <a class="btn sm" href="https://github.com/akoya-wallet/akoya-extension/blob/main/PERMISSIONS.md" rel="noopener">Permissions</a>
+        <a class="btn sm" href="https://github.com/akoya-wallet/akoya-extension/blob/main/SECURITY.md" rel="noopener">Report a vulnerability</a>
+      </div>
+    </div>
+    <ol class="sec-list">
+      <li><b>Encrypted vault</b><span>Your recovery phrase is sealed with Argon2id and AES-256-GCM. It is never stored in plain text.</span></li>
+      <li><b>Keys exist only while signing</b><span>While unlocked, Akoya holds only your public key. Private keys are derived for a signature and then discarded.</span></li>
+      <li><b>Password on every send</b><span>Every send and every phrase reveal asks for your password again. An unlocked popup isn't enough.</span></li>
+      <li><b>Invisible to websites</b><span>No content scripts, no injected provider, a strict CSP. The only permission is <code>storage</code>, plus network access to your indexer.</span></li>
+      <li><b>Doesn't trust the server</b><span>Indexer responses are validated and every address is re-derived locally. Data that doesn't match is rejected.</span></li>
+      <li><b>Verifiable releases</b><span>Reproducible builds with SHA-256 checksums and a signed SLSA build-provenance attestation.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================ install -->
+<section class="block install" id="install">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Install</span>
+      <h2>Up and running in a minute.</h2>
+      <p class="lede">Until the Chrome Web Store listing is live, install the signed release from GitHub.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Download</h3><p>Get <code>akoya-&lt;version&gt;.zip</code> from the <a href="https://github.com/akoya-wallet/akoya-extension/releases" rel="noopener">latest release</a> and unzip it.</p></li>
+      <li><h3>Enable developer mode</h3><p>Open <code>chrome://extensions</code> and switch on <b>Developer mode</b> in the top right.</p></li>
+      <li><h3>Load unpacked</h3><p>Click <b>Load unpacked</b> and select the unzipped folder. Setup opens in a full tab.</p></li>
+    </ol>
+    <div class="verify">
+      <div>
+        <h3>Verify before you trust</h3>
+        <p>The checksum must match the <code>.sha256</code> file, and the attestation proves the zip was built by this repository's release workflow from the tagged commit.</p>
+      </div>
+<pre><span class="c"># checksum must match akoya-&lt;version&gt;.zip.sha256</span>
+shasum -a 256 akoya-&lt;version&gt;.zip
+
+<span class="c"># provenance: built by GitHub Actions from the tag</span>
+gh attestation verify akoya-&lt;version&gt;.zip \
+  -R akoya-wallet/akoya-extension</pre>
+    </div>
+    <div class="store">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span><b>Chrome Web Store: coming soon.</b> The official extension ID will be published here and in the README. Until then, any store listing called Akoya is not ours.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ safety -->
+<section class="block safety" id="safety">
+  <div class="wrap">
+    <div class="panel">
+      <div>
+        <span class="eyebrow">Stay safe</span>
+        <h2>Akoya will never ask for your recovery phrase.</h2>
+        <p class="lede">Not by email, not in a DM, not on a "support" or "validation" site. Anyone who asks for it wants your PRL.</p>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Official website:</b> <code>akoyawallet.app</code> only.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Official source:</b> <code>github.com/akoya-wallet</code> only.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Official extension ID:</b> not published yet. Anything claiming to be Akoya in a store today is a fake.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Contact:</b> <code>contact@akoyawallet.app</code>. We never DM first.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ roadmap -->
+<section class="block" id="roadmap">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Roadmap</span>
+      <h2>Where Akoya is going.</h2>
+      <p class="lede">Anything that touches keys or signing goes through review first. No cloud backup, no sync, no custody. Ever.</p>
+    </div>
+    <div class="road">
+      <div class="col now">
+        <h3><i></i>Now · v0.1 alpha</h3>
+        <ul>
+          <li>Create or import a wallet</li>
+          <li>Send, receive, QR codes</li>
+          <li>History and mining-reward maturity</li>
+          <li>Multiple wallets, Mainnet and Testnet2</li>
+          <li>Reproducible, attested releases</li>
+        </ul>
+      </div>
+      <div class="col next">
+        <h3><i></i>Before 1.0</h3>
+        <ul>
+          <li><b>English interface</b></li>
+          <li><b>Independent security audit</b></li>
+          <li><b>Chrome Web Store</b> listing</li>
+          <li>Protection for <code>.pns</code> name coins</li>
+          <li>Coin control, labels, CSV export</li>
+          <li>Multiple accounts per phrase</li>
+        </ul>
+      </div>
+      <div class="col later">
+        <h3><i></i>Later</h3>
+        <ul>
+          <li>dApp connections, with strict approvals</li>
+          <li>Hardware wallet signing</li>
+          <li>PSBT and watch-only workflows</li>
+          <li>P2MR (post-quantum) receive</li>
+          <li>Firefox</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ faq -->
+<section class="block compat" id="faq">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is Akoya made by Pearl Research Labs?</summary>
+        <p>No. Akoya is built by PRLFlipBTC, an independent team, and is not affiliated with or endorsed by Pearl Research Labs. It is designed to be fully compatible with the official Pearl Wallet.</p>
+      </details>
+      <details>
+        <summary>Is it safe to use?</summary>
+        <p>Akoya is alpha software and hasn't had an independent audit yet. Please keep only small amounts in it for now. An audit is on the roadmap before 1.0, and the code is public so anyone can review it today.</p>
+      </details>
+      <details>
+        <summary>Does Akoya collect any data?</summary>
+        <p>No. There are no analytics, no telemetry, and no accounts. The extension talks only to the Blockbook indexer you choose, which, as with any light wallet, can see the addresses it's asked about.</p>
+        <p>This website runs no JavaScript and loads nothing from third parties.</p>
+      </details>
+      <details>
+        <summary>Does it cost anything?</summary>
+        <p>Akoya is free. You pay only the network fee, which is shown before you sign. Akoya adds no fees of its own.</p>
+      </details>
+      <details>
+        <summary>I forgot my password. What now?</summary>
+        <p>Import the wallet again with your recovery phrase and choose a new password. There's a link for this on the unlock screen. Nobody, including us, can recover a lost phrase, so keep it written down somewhere safe and offline.</p>
+      </details>
+      <details>
+        <summary>Can I move from Pearl Wallet or oyster?</summary>
+        <p>Yes. Import the same recovery phrase, or an oyster hex seed, and you'll see the same addresses and balance. Both wallets can stay in use at the same time.</p>
+      </details>
+      <details>
+        <summary>Which browsers are supported?</summary>
+        <p>Chrome 120 and newer, plus Chromium browsers such as Brave and Edge. Firefox support is planned.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ closing -->
+<section class="closing">
+  <div class="wrap">
+    <img class="mark" src="/assets/mark.svg" alt="" width="84" height="84">
+    <h2>Your keys. Your <span class="nacre">Pearl</span>.</h2>
+    <p class="lede">Open source, self-custodial, and built in the open.</p>
+    <div class="cta">
+      <a class="btn primary" href="#install">Install Akoya</a>
+      <a class="btn" href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">Star on GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="/assets/lockup.svg" alt="Akoya" width="74" height="22">
+      <p>Open-source wallet for Pearl (PRL).</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Developers</h4>
+      <ul>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">Source code</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/releases" rel="noopener">Releases</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+        <li><a href="https://github.com/pearl-research-labs/pearl" rel="noopener">Pearl protocol</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@akoyawallet.app">contact@akoyawallet.app</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/SECURITY.md" rel="noopener">Security reports</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/TRADEMARKS.md" rel="noopener">Brand &amp; trademarks</a></li>
+      </ul>
+    </div>
+    <p class="legal">© 2026 PRLFlipBTC. Akoya's source code is released under the MIT License; the Akoya name and logo are not covered by it. Akoya is not affiliated with or endorsed by Pearl Research Labs. Alpha software, provided as is. Use at your own risk.</p>
+  </div>
+</footer>
+</body>
+</html>
