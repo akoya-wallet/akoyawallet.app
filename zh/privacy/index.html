@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>隐私政策 · Akoya</title>
+  <meta name="description" content="说明 Akoya 浏览器扩展处理哪些数据：哪些只留在你的设备上，哪些会发给你选择的 RPC 节点，以及哪些从不收集。">
+  <link rel="canonical" href="https://akoyawallet.app/zh/privacy/">
+  <link rel="alternate" hreflang="en" href="https://akoyawallet.app/privacy/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://akoyawallet.app/zh/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://akoyawallet.app/privacy/">
+  <meta name="theme-color" content="#0E1326">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Akoya">
+  <meta property="og:url" content="https://akoyawallet.app/zh/privacy/">
+  <meta property="og:title" content="隐私政策 · Akoya">
+  <meta property="og:description" content="说明 Akoya 浏览器扩展处理哪些数据：哪些只留在你的设备上，哪些会发给你选择的 RPC 节点，以及哪些从不收集。">
+  <meta property="og:image" content="https://akoyawallet.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/site.css?v=c5e71b8b16">
+</head>
+<body>
+<input type="checkbox" id="still" class="still-toggle" aria-label="暂停动画">
+<a class="skip" href="#main">跳到正文</a>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="Akoya 首页"><img src="/assets/lockup.svg" alt="Akoya" width="88" height="26"></a>
+    <nav class="nav" aria-label="主导航">
+      <a href="/zh/#features">功能</a>
+      <a href="/zh/#compatibility">兼容性</a>
+      <a href="/zh/#security">安全</a>
+      <a href="/zh/#install">安装</a>
+      <a href="/zh/#faq">常见问题</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="lang" href="/privacy/" hreflang="en" lang="en">English</a>
+    <a class="btn sm" href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+<article class="policy">
+  <div class="wrap">
+    <h1>Akoya 隐私政策</h1>
+    <p class="updated">最后更新：2026-10-15</p>
+    <p>Akoya 是 Pearl (PRL) 的开源、自托管浏览器扩展钱包，由 PRLFlipBTC 发布。本政策准确说明该扩展处理哪些数据。实现下述所有行为的源代码公开在 <a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">https://github.com/akoya-wallet/akoya-extension</a> 。</p>
+    <h2 id="summary">摘要</h2>
+    <ul>
+      <li>我们不收集、不接收、不存储、不出售、也不分享你的任何数据。PRLFlipBTC 不运营任何与该扩展通信的服务器。</li>
+      <li>没有任何统计分析、遥测、广告、追踪或崩溃上报。</li>
+      <li>你的助记词和私钥永远不会离开你的设备。</li>
+    </ul>
+    <h2 id="data">存储在你设备上的数据</h2>
+    <div class="table-wrap" role="region" aria-labelledby="data" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">数据</th><th scope="col">位置</th><th scope="col">保护方式</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">助记词 / 种子及可选的 BIP39 密语</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">用你的密码加密（Argon2id + AES-256-GCM），从不传输。</td></tr>
+          <tr><th scope="row">钱包名称、网络、派生方式、账户公钥（xpub）</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">不加密。属于公开数据：无法动用资金，但能访问你浏览器配置文件的人可以看到余额和交易记录。</td></tr>
+          <tr><th scope="row">设置（语言、自动锁定、RPC 节点、区块浏览器）</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">非敏感数据。</td></tr>
+          <tr><th scope="row">向你付款的矿池地址</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">公开的链上数据，用于标记挖矿收益。</td></tr>
+          <tr><th scope="row">已解锁的会话（钱包 ID 和 xpub）</th><td data-label="位置">chrome.storage.session</td><td data-label="保护方式">仅存于内存，浏览器关闭或钱包锁定时清除。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>卸载扩展，或使用「设置 → 删除此钱包」，即可从你的设备上删除这些数据。</p>
+    <h2 id="network">网络请求</h2>
+    <p>该扩展只会连接：</p>
+    <ol>
+      <li>你选择的 Pearl RPC 节点（默认为 Pearl Research Labs 运营的官方 Blockbook 服务器 blockbook.pearlresearch.ai 和 blockbook.testnet.pearlresearch.ai，并非由我们运营）。为了显示你的余额和交易记录并发送 PRL，扩展会把你的账户公钥（xpub）和地址发送给该节点，并通过它广播你已签名的交易。因此该节点能看到你的地址、余额和交易。它永远不会收到你的助记词、私钥或密码。你可以在「设置 → RPC 节点」中切换到或自建自己的节点。</li>
+      <li>区块浏览器，仅在你点击「在浏览器查看」链接时。届时会在普通浏览器标签页中，打开你所选浏览器（默认 explorer.pearlresearch.ai）上的该笔交易或该地址。</li>
+    </ol>
+    <p>除此之外不会连接任何地方。该扩展不使用 Cookie，也不加载远程代码。</p>
+    <h2 id="permissions">权限</h2>
+    <ul>
+      <li>storage：在你的设备上保存加密的钱包和你的设置。</li>
+      <li>访问 blockbook.pearlresearch.ai / blockbook.testnet.pearlresearch.ai：与默认的 Pearl RPC 节点通信。</li>
+      <li>对其他 https:// 网站的可选访问权限：仅在你添加自己的 RPC 节点时才会请求，且只针对该网站。</li>
+    </ul>
+    <h2 id="children">儿童</h2>
+    <p>Akoya 并非面向 13 岁以下儿童，也不会在知情的情况下处理他们的数据。</p>
+    <h2 id="changes">变更</h2>
+    <p>本政策的变更会发布在源代码仓库和 <a href="https://akoyawallet.app/zh/privacy/" rel="noopener">https://akoyawallet.app/zh/privacy/</a> ，并更新「最后更新」日期。</p>
+    <h2 id="contact">联系方式</h2>
+    <p><a href="mailto:contact@akoyawallet.app">contact@akoyawallet.app</a> —— 安全问题请使用私密漏洞报告：<a href="https://github.com/akoya-wallet/akoya-extension/security/advisories/new" rel="noopener">https://github.com/akoya-wallet/akoya-extension/security/advisories/new</a></p>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="/assets/lockup.svg" alt="Akoya" width="74" height="22">
+      <p>开源 Pearl (PRL) 钱包。</p>
+    </div>
+    <div>
+      <h4>产品</h4>
+      <ul>
+        <li><a href="/zh/#features">功能</a></li>
+        <li><a href="/zh/#security">安全</a></li>
+        <li><a href="/zh/#install">安装</a></li>
+        <li><a href="/zh/#roadmap">路线图</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>开发者</h4>
+      <ul>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">源码</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/releases" rel="noopener">发布</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/CONTRIBUTING.md" rel="noopener">参与贡献</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoyawallet.app" rel="noopener">网站源码</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>联系</h4>
+      <ul>
+        <li><a href="mailto:contact@akoyawallet.app">contact@akoyawallet.app</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/SECURITY.md" rel="noopener">安全报告</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/TRADEMARKS.md" rel="noopener">品牌与商标</a></li>
+        <li><a href="/zh/privacy/">隐私政策</a></li>
+      </ul>
+    </div>
+    <p class="legal">© 2026 PRLFlipBTC。Akoya 源代码以 MIT 协议发布；Akoya 名称与标志不在 MIT 授权范围内。Akoya 与 Pearl Research Labs 无关联，亦未获其背书。Alpha 软件，按现状提供，风险自负。</p>
+  </div>
+</footer>
+
+<label for="still" class="motion-btn"><span class="p"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="3" height="10" rx="1"/><rect x="7" y="1" width="3" height="10" rx="1"/></svg>暂停动效</span><span class="r"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z"/></svg>播放动效</span></label>
+</body>
+</html>

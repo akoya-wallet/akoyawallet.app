@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Privacy Policy · Akoya</title>
+  <meta name="description" content="What data the Akoya browser extension handles: what stays on your device, what goes to the RPC node you choose, and what is never collected.">
+  <link rel="canonical" href="https://akoyawallet.app/privacy/">
+  <link rel="alternate" hreflang="en" href="https://akoyawallet.app/privacy/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://akoyawallet.app/zh/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://akoyawallet.app/privacy/">
+  <meta name="theme-color" content="#0E1326">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Akoya">
+  <meta property="og:url" content="https://akoyawallet.app/privacy/">
+  <meta property="og:title" content="Privacy Policy · Akoya">
+  <meta property="og:description" content="What data the Akoya browser extension handles: what stays on your device, what goes to the RPC node you choose, and what is never collected.">
+  <meta property="og:image" content="https://akoyawallet.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/site.css?v=c5e71b8b16">
+</head>
+<body>
+<input type="checkbox" id="still" class="still-toggle" aria-label="Pause animations">
+<a class="skip" href="#main">Skip to content</a>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Akoya home"><img src="/assets/lockup.svg" alt="Akoya" width="88" height="26"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#features">Features</a>
+      <a href="/#compatibility">Compatibility</a>
+      <a href="/#security">Security</a>
+      <a href="/#install">Install</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="lang" href="/zh/privacy/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+    <a class="btn sm" href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+<article class="policy">
+  <div class="wrap">
+    <h1>Akoya Privacy Policy</h1>
+    <p class="updated">Last updated: 2026-10-15</p>
+    <p>Akoya is an open-source, self-custodial browser extension wallet for Pearl (PRL), published by PRLFlipBTC. This policy explains exactly what data the extension handles. The source code that implements everything below is public at <a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">https://github.com/akoya-wallet/akoya-extension</a>.</p>
+    <h2 id="summary">Summary</h2>
+    <ul>
+      <li>We do not collect, receive, store, sell or share any of your data. PRLFlipBTC operates no server that the extension talks to.</li>
+      <li>There is no analytics, telemetry, advertising, tracking or crash reporting.</li>
+      <li>Your recovery phrase and private keys never leave your device.</li>
+    </ul>
+    <h2 id="data">Data stored on your device</h2>
+    <div class="table-wrap" role="region" aria-labelledby="data" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Data</th><th scope="col">Where</th><th scope="col">Protection</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Recovery phrase / seed and optional BIP39 passphrase</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Encrypted with your password (Argon2id + AES-256-GCM). Never transmitted.</td></tr>
+          <tr><th scope="row">Wallet name, network, derivation mode, account public key (xpub)</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not encrypted. Public data: it cannot spend funds, but reveals balances and history to someone with access to your browser profile.</td></tr>
+          <tr><th scope="row">Settings (language, auto-lock, RPC nodes, block explorers)</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not sensitive.</td></tr>
+          <tr><th scope="row">Addresses of mining pools that paid you</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Public blockchain data, used to label mining income.</td></tr>
+          <tr><th scope="row">Unlocked session (wallet id and xpub)</th><td data-label="Where">chrome.storage.session</td><td data-label="Protection">Memory only, cleared when the browser closes or the wallet locks.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Uninstalling the extension or using Settings → Delete this wallet removes this data from your device.</p>
+    <h2 id="network">Network requests</h2>
+    <p>The extension only connects to:</p>
+    <ol>
+      <li>The Pearl RPC node you choose (by default the official Pearl Blockbook servers blockbook.pearlresearch.ai and blockbook.testnet.pearlresearch.ai, operated by Pearl Research Labs, not by us). To show your balance and history and to send PRL, the extension sends that node your account public key (xpub) and addresses, and broadcasts transactions you have signed. The node can therefore see your addresses, balances and transactions. It never receives your recovery phrase, private keys or password. You can switch to, or run, your own node in Settings → RPC node.</li>
+      <li>A block explorer, only when you click a "View in explorer" link. That opens a normal browser tab at the explorer you selected (by default explorer.pearlresearch.ai) for that transaction or address.</li>
+    </ol>
+    <p>Nothing else is contacted. The extension does not use cookies and does not load remote code.</p>
+    <h2 id="permissions">Permissions</h2>
+    <ul>
+      <li>storage: keep the encrypted wallet and your settings on your device.</li>
+      <li>Access to blockbook.pearlresearch.ai / blockbook.testnet.pearlresearch.ai: talk to the default Pearl RPC nodes.</li>
+      <li>Optional access to other https:// sites: requested only when you add your own RPC node, and only for that one site.</li>
+    </ul>
+    <h2 id="children">Children</h2>
+    <p>Akoya is not directed to children under 13 and does not knowingly process their data.</p>
+    <h2 id="changes">Changes</h2>
+    <p>Changes to this policy are published in the source repository and on <a href="https://akoyawallet.app/privacy/" rel="noopener">https://akoyawallet.app/privacy/</a> with a new "Last updated" date.</p>
+    <h2 id="contact">Contact</h2>
+    <p><a href="mailto:contact@akoyawallet.app">contact@akoyawallet.app</a> — for security issues, please use private vulnerability reporting: <a href="https://github.com/akoya-wallet/akoya-extension/security/advisories/new" rel="noopener">https://github.com/akoya-wallet/akoya-extension/security/advisories/new</a></p>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="/assets/lockup.svg" alt="Akoya" width="74" height="22">
+      <p>Open-source wallet for Pearl (PRL).</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#security">Security</a></li>
+        <li><a href="/#install">Install</a></li>
+        <li><a href="/#roadmap">Roadmap</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Developers</h4>
+      <ul>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">Source code</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/releases" rel="noopener">Releases</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoyawallet.app" rel="noopener">Website source</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@akoyawallet.app">contact@akoyawallet.app</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/SECURITY.md" rel="noopener">Security reports</a></li>
+        <li><a href="https://github.com/akoya-wallet/akoya-extension/blob/main/TRADEMARKS.md" rel="noopener">Brand &amp; trademarks</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <p class="legal">© 2026 PRLFlipBTC. Akoya's source code is released under the MIT License; the Akoya name and logo are not covered by it. Akoya is not affiliated with or endorsed by Pearl Research Labs. Alpha software, provided as is. Use at your own risk.</p>
+  </div>
+</footer>
+
+<label for="still" class="motion-btn"><span class="p"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="3" height="10" rx="1"/><rect x="7" y="1" width="3" height="10" rx="1"/></svg>Pause motion</span><span class="r"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z"/></svg>Play motion</span></label>
+</body>
+</html>

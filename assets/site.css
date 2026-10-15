@@ -407,6 +407,30 @@ footer a { color: var(--faint); }
 footer a:hover { color: var(--text); }
 footer .legal { grid-column: 1 / -1; padding-top: 28px; border-top: 1px solid var(--line-soft); font-size: 12px; line-height: 1.7; }
 
+/* ---------- policy pages (privacy) ---------- */
+.policy { padding: 72px 0 120px; }
+.policy .wrap { max-width: calc(780px + var(--gutter) * 2); }
+.policy h1 { font-size: clamp(38px, 5.4vw, 60px); letter-spacing: -0.045em; font-weight: 800; margin: 0 0 14px; }
+.policy .updated { margin-bottom: 40px; color: var(--faint); font: 500 13px/1.6 var(--mono); letter-spacing: 0.02em; }
+.policy h2 { font-size: 24px; letter-spacing: -0.02em; margin: 56px 0 16px; scroll-margin-top: 96px; }
+.policy p, .policy li { color: var(--muted); font-size: 16px; line-height: 1.75; }
+.policy p, .policy ul, .policy ol { max-width: 70ch; }
+.policy p + p, .policy p + ul, .policy p + ol, .policy ul + p, .policy ol + p { margin-top: 14px; }
+.policy ul, .policy ol { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.policy li::marker { color: var(--accent); }
+.policy a { overflow-wrap: anywhere; }
+.policy .table-wrap { margin-top: 4px; overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.policy .table-wrap:focus-visible { outline-offset: 2px; }
+.policy table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 14.5px; }
+.policy th, .policy td { text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--line); line-height: 1.6; }
+.policy thead th { background: var(--surface-2); color: var(--text); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.policy tbody th { color: var(--text); font-weight: 650; width: 34%; }
+.policy td { color: var(--muted); }
+.policy td:first-of-type { font-family: var(--mono); font-size: 12.5px; white-space: nowrap; color: var(--accent); }
+.policy tbody tr:last-child th, .policy tbody tr:last-child td { border-bottom: 0; }
+.policy .table-wrap + p { margin-top: 18px; }
+:lang(zh) .policy thead th { letter-spacing: 0.02em; }
+
 /* ---------- keyframes ---------- */
 @keyframes satin { to { background-position: -250% 0; } }
 @keyframes spin { to { --a: 360deg; } }
@@ -491,6 +515,18 @@ footer .legal { grid-column: 1 / -1; padding-top: 28px; border-top: 1px solid va
   .specs dd { margin-bottom: 10px; }
   footer .wrap { grid-template-columns: minmax(0, 1fr); }
   .closing { padding: 96px 0; }
+  .policy { padding: 44px 0 88px; }
+  .policy h2 { margin-top: 44px; }
+  .policy .table-wrap { overflow: visible; }
+  .policy table, .policy tbody, .policy tr, .policy th, .policy td { display: block; min-width: 0; width: auto; }
+  .policy thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .policy tbody tr { padding: 16px; border-bottom: 1px solid var(--line); }
+  .policy tbody tr:last-child { border-bottom: 0; }
+  .policy tbody th, .policy td { padding: 0; border: 0; }
+  .policy tbody th { width: auto; margin-bottom: 10px; }
+  .policy td + td { margin-top: 8px; }
+  .policy td::before { content: attr(data-label); display: block; margin-bottom: 2px; font: 600 11px/1.4 var(--font); letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+  .policy td:first-of-type { white-space: normal; overflow-wrap: anywhere; }
   .motion-btn { right: 12px; bottom: 12px; }
 }
 

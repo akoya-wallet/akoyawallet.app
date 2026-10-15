@@ -10,4 +10,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://akoyawallet.app/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://akoyawallet.app/zh/"/>
   </url>
+  <url>
+    <loc>https://akoyawallet.app/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://akoyawallet.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://akoyawallet.app/zh/privacy/"/>
+  </url>
+  <url>
+    <loc>https://akoyawallet.app/zh/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://akoyawallet.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://akoyawallet.app/zh/privacy/"/>
+  </url>
 </urlset>
