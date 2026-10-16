@@ -25,7 +25,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/site.css?v=a0ab0a6e37">
+  <link rel="stylesheet" href="/assets/site.css?v=c0d43056c0">
 </head>
 <body>
 <input type="checkbox" id="still" class="still-toggle" aria-label="Pause animations">
@@ -55,7 +55,7 @@
 <article class="policy">
   <div class="wrap">
     <h1>Akoya Privacy Policy</h1>
-    <p class="updated">Last updated: 2026-10-15</p>
+    <p class="updated">Last updated: 2026-10-16</p>
     <p>Akoya is an open-source, self-custodial browser extension wallet for Pearl (PRL), published by PRLFlipBTC. This policy explains exactly what data the extension handles. The source code that implements everything below is public at <a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">https://github.com/akoya-wallet/akoya-extension</a>.</p>
     <h2 id="summary">Summary</h2>
     <ul>
@@ -70,8 +70,11 @@
         <tbody>
           <tr><th scope="row">Recovery phrase / seed and optional BIP39 passphrase</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Encrypted with your password (Argon2id + AES-256-GCM). Never transmitted.</td></tr>
           <tr><th scope="row">Wallet name, network, derivation mode, account public key (xpub)</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not encrypted. Public data: it cannot spend funds, but reveals balances and history to someone with access to your browser profile.</td></tr>
-          <tr><th scope="row">Settings (language, auto-lock, RPC nodes, block explorers)</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not sensitive.</td></tr>
+          <tr><th scope="row">Settings (language, auto-lock, RPC nodes, block explorers, display currency)</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not sensitive.</td></tr>
           <tr><th scope="row">Addresses of mining pools that paid you</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Public blockchain data, used to label mining income.</td></tr>
+          <tr><th scope="row">NOCK address (only if you turn on Nockchain): the public Nockchain address derived from your recovery phrase</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Public. Re-checked against your recovery phrase on every unlock. Deleted with the wallet.</td></tr>
+          <tr><th scope="row">Mining-pool link (only if you link a pool): the pool and the address you mine to, per wallet</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not sensitive. Deleted with the wallet.</td></tr>
+          <tr><th scope="row">Daily P&amp;L log (only if you turn on Price &amp; P&amp;L): per day, the PRL price, your holdings, PRL mined and the resulting profit/loss, kept for 90 days</th><td data-label="Where">chrome.storage.local</td><td data-label="Protection">Not encrypted, like the xpub above. Never transmitted. Deleted with the wallet.</td></tr>
           <tr><th scope="row">Unlocked session (wallet id and xpub)</th><td data-label="Where">chrome.storage.session</td><td data-label="Protection">Memory only, cleared when the browser closes or the wallet locks.</td></tr>
         </tbody>
       </table>
@@ -82,13 +85,16 @@
     <ol>
       <li>The Pearl RPC node you choose (by default the official Pearl Blockbook servers blockbook.pearlresearch.ai and blockbook.testnet.pearlresearch.ai, operated by Pearl Research Labs, not by us). To show your balance and history and to send PRL, the extension sends that node your account public key (xpub) and addresses, and broadcasts transactions you have signed. The node can therefore see your addresses, balances and transactions. It never receives your recovery phrase, private keys or password. You can switch to, or run, your own node in Settings → RPC node.</li>
       <li>A block explorer, only when you click a "View in explorer" link. That opens a normal browser tab at the explorer you selected (by default explorer.pearlresearch.ai) for that transaction or address.</li>
+      <li>CoinGecko (api.coingecko.com), only if you turn on Price &amp; P&amp;L (off by default; Settings → General, or "Show value &amp; P&amp;L" on the home screen). The extension asks CoinGecko for the current PRL price, its price at midnight and the PRL/BTC market caps, in the currency you picked. These requests contain only the coin names and the currency, never your addresses, balances, xpub or anything else about your wallet, and they are sent without cookies. As with any website, CoinGecko can see your IP address. Your fiat value and P&amp;L are calculated on your device.</li>
+      <li>The mining pool you link, only if you link one (off by default; currently Pearlhash, pearlhash.xyz; Settings → Mining pool, or "Connect" on the home screen). The extension asks the pool for the stats of the one address you mine to: your rigs, hashrate, pending rewards and pool payouts. Only that address is sent, without cookies; the pool sees your IP address and which address you looked up. Chrome asks you to allow access to that one site first. The pool's response also lists your rigs' IP addresses; the extension ignores them and never stores or shows them.</li>
+      <li>A Nockchain node, only if you turn on Nockchain (NOCK) (off by default; Settings → Nockchain). By default rpc.nockbox.org, operated by NockBox Inc.; you can set your own. To show your NOCK balance the extension sends the node lookup keys derived from your NOCK address (note "first-names"), without cookies. The node can link them to your address and sees your IP address. Your recovery phrase and keys are never sent.</li>
     </ol>
     <p>Nothing else is contacted. The extension does not use cookies and does not load remote code.</p>
     <h2 id="permissions">Permissions</h2>
     <ul>
       <li>storage: keep the encrypted wallet and your settings on your device.</li>
       <li>Access to blockbook.pearlresearch.ai / blockbook.testnet.pearlresearch.ai: talk to the default Pearl RPC nodes.</li>
-      <li>Optional access to other https:// sites: requested only when you add your own RPC node, and only for that one site.</li>
+      <li>Optional access to other https:// sites: requested only when you add your own RPC node or link a mining pool, and only for that one site.</li>
     </ul>
     <h2 id="children">Children</h2>
     <p>Akoya is not directed to children under 13 and does not knowingly process their data.</p>

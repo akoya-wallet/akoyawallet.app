@@ -25,7 +25,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/site.css?v=a0ab0a6e37">
+  <link rel="stylesheet" href="/assets/site.css?v=c0d43056c0">
 </head>
 <body>
 <input type="checkbox" id="still" class="still-toggle" aria-label="暂停动画">
@@ -231,6 +231,21 @@
         <h3>带上你的助记词</h3>
         <p>导入 BIP39 助记词或 oyster hex 种子，或者一分钟新建一个钱包。</p>
       </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>价值和每日盈亏</h3>
+        <p>可选：用美元、人民币、欧元或 sats 查看 PRL 价值，以及今天的盈亏（价格涨跌加挖矿收益），每日记录保存在本机。</p>
+      </article>
+      <article class="card reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 13.5 10.5"/><path d="M8.5 4.5c4.6-1.6 9.6 1.4 11 6"/><path d="M11.5 6.2l6.3 6.3"/></svg></div>
+        <h3>矿机一目了然</h3>
+        <p>关联 Pearlhash 账户，查看在线矿机、每张 GPU 的算力和待结算收益，自动标出偏慢的卡。</p>
+      </article>
+      <article class="card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></div>
+        <h3>同一套助记词看 NOCK</h3>
+        <p>开启 Nockchain 后查看 NOCK 余额和收款地址，与官方钱包一致。目前为只读。</p>
+      </article>
     </div>
   </div>
 </section>
@@ -359,12 +374,12 @@ gh attestation verify akoya-&lt;版本&gt;.zip \
     <div class="road-line" aria-hidden="true"><i></i><b></b></div>
     <div class="road">
       <div class="col now reveal">
-        <h3><i></i>现在 · v0.1 alpha</h3>
-        <ul><li>创建或导入钱包</li><li>发送、接收、二维码</li><li>交易记录与挖矿奖励成熟度</li><li>多钱包，Mainnet 与 Testnet2</li><li>可复现、带来源证明的发布</li></ul>
+        <h3><i></i>现在 · v0.3 alpha</h3>
+        <ul><li>创建或导入钱包</li><li>发送、接收、二维码</li><li>挖矿收益、成熟度与矿池数据</li><li>可选的法币价值和每日盈亏</li><li>NOCK 余额与收款（只读）</li><li>英文与简体中文</li><li>可复现、带来源证明的发布</li></ul>
       </div>
       <div class="col next reveal d1">
         <h3><i></i>1.0 之前</h3>
-        <ul><li><b>英文界面</b></li><li><b>独立安全审计</b></li><li><b>上架 Chrome 应用商店</b></li><li><code>.pns</code> 名称币保护</li><li>手动选币、地址标签、CSV 导出</li><li>一个助记词多个账户</li></ul>
+        <ul><li><b>独立安全审计</b></li><li><b>上架 Chrome 应用商店</b></li><li><code>.pns</code> 名称币保护</li><li>手动选币、地址标签、CSV 导出</li><li>一个助记词多个账户</li><li>发送 NOCK</li></ul>
       </div>
       <div class="col later reveal d2">
         <h3><i></i>以后</h3>
@@ -392,7 +407,7 @@ gh attestation verify akoya-&lt;版本&gt;.zip \
       </details>
       <details>
         <summary>Akoya 会收集数据吗？</summary>
-        <p>不会。没有统计、没有遥测、无需账号。插件只与你选择的 Blockbook 索引节点通信；和任何轻钱包一样，该节点能看到被查询的地址。</p>
+        <p>不会。没有统计、没有遥测、无需账号。默认情况下，插件只与你选择的 Blockbook 索引节点通信；和任何轻钱包一样，该节点能看到被查询的地址。你自己开启的可选功能（价格和盈亏、矿池数据、NOCK 余额）会访问对应的服务，但从不涉及私钥。每一个请求都列在<a href="/zh/privacy/">隐私政策</a>里。</p>
         <p>本网站不运行任何 JavaScript，页面上的动效全部是纯 CSS。</p>
       </details>
       <details>

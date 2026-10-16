@@ -25,7 +25,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/site.css?v=a0ab0a6e37">
+  <link rel="stylesheet" href="/assets/site.css?v=c0d43056c0">
 </head>
 <body>
 <input type="checkbox" id="still" class="still-toggle" aria-label="暂停动画">
@@ -55,7 +55,7 @@
 <article class="policy">
   <div class="wrap">
     <h1>Akoya 隐私政策</h1>
-    <p class="updated">最后更新：2026-10-15</p>
+    <p class="updated">最后更新：2026-10-16</p>
     <p>Akoya 是 Pearl (PRL) 的开源、自托管浏览器扩展钱包，由 PRLFlipBTC 发布。本政策准确说明该扩展处理哪些数据。实现下述所有行为的源代码公开在 <a href="https://github.com/akoya-wallet/akoya-extension" rel="noopener">https://github.com/akoya-wallet/akoya-extension</a> 。</p>
     <h2 id="summary">摘要</h2>
     <ul>
@@ -70,8 +70,11 @@
         <tbody>
           <tr><th scope="row">助记词 / 种子及可选的 BIP39 密语</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">用你的密码加密（Argon2id + AES-256-GCM），从不传输。</td></tr>
           <tr><th scope="row">钱包名称、网络、派生方式、账户公钥（xpub）</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">不加密。属于公开数据：无法动用资金，但能访问你浏览器配置文件的人可以看到余额和交易记录。</td></tr>
-          <tr><th scope="row">设置（语言、自动锁定、RPC 节点、区块浏览器）</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">非敏感数据。</td></tr>
+          <tr><th scope="row">设置（语言、自动锁定、RPC 节点、区块浏览器、显示币种）</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">非敏感数据。</td></tr>
           <tr><th scope="row">向你付款的矿池地址</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">公开的链上数据，用于标记挖矿收益。</td></tr>
+          <tr><th scope="row">NOCK 地址（仅在你开启 Nockchain 时）：由你的助记词派生的公开 Nockchain 地址</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">公开数据。每次解锁时都会用助记词重新核对。随钱包一起删除。</td></tr>
+          <tr><th scope="row">矿池关联（仅在你关联矿池时）：每个钱包关联的矿池和挖矿地址</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">非敏感数据。随钱包一起删除。</td></tr>
+          <tr><th scope="row">每日盈亏记录（仅在你开启「价格和盈亏」时）：每天的 PRL 价格、持仓、挖矿数量和盈亏，保留 90 天</th><td data-label="位置">chrome.storage.local</td><td data-label="保护方式">不加密（与上面的 xpub 相同）。从不传输。随钱包一起删除。</td></tr>
           <tr><th scope="row">已解锁的会话（钱包 ID 和 xpub）</th><td data-label="位置">chrome.storage.session</td><td data-label="保护方式">仅存于内存，浏览器关闭或钱包锁定时清除。</td></tr>
         </tbody>
       </table>
@@ -82,13 +85,16 @@
     <ol>
       <li>你选择的 Pearl RPC 节点（默认为 Pearl Research Labs 运营的官方 Blockbook 服务器 blockbook.pearlresearch.ai 和 blockbook.testnet.pearlresearch.ai，并非由我们运营）。为了显示你的余额和交易记录并发送 PRL，扩展会把你的账户公钥（xpub）和地址发送给该节点，并通过它广播你已签名的交易。因此该节点能看到你的地址、余额和交易。它永远不会收到你的助记词、私钥或密码。你可以在「设置 → RPC 节点」中切换到或自建自己的节点。</li>
       <li>区块浏览器，仅在你点击「在浏览器查看」链接时。届时会在普通浏览器标签页中，打开你所选浏览器（默认 explorer.pearlresearch.ai）上的该笔交易或该地址。</li>
+      <li>CoinGecko（api.coingecko.com），仅在你开启「价格和盈亏」时（默认关闭；设置 → 通用，或首页的「显示价值和盈亏」）。扩展会向 CoinGecko 查询 PRL 的当前价格、当天 0 点的价格，以及 PRL 和 BTC 的市值，币种为你选择的币种。这些请求只包含币种名称，从不包含你的地址、余额、xpub 或任何其他钱包信息，也不带 Cookie。和访问任何网站一样，CoinGecko 能看到你的 IP 地址。法币价值和盈亏都在你的设备上计算。</li>
+      <li>你关联的矿池，仅在你关联矿池时（默认关闭；目前支持 Pearlhash，pearlhash.xyz；设置 → 矿池，或首页的「连接」）。扩展会向矿池查询你挖矿地址的数据：矿机、算力、待结算收益和矿池打款。只发送这一个地址，不带 Cookie；矿池能看到你的 IP 和你查询的地址。Chrome 会先请你允许访问该网站。矿池的返回数据里还包含矿机的 IP 地址，扩展会直接忽略，从不保存或显示。</li>
+      <li>Nockchain 节点，仅在你开启 Nockchain (NOCK) 时（默认关闭；设置 → Nockchain）。默认是 NockBox Inc. 运营的 rpc.nockbox.org，你也可以设置自己的节点。为显示 NOCK 余额，扩展会向节点发送由你的 NOCK 地址派生的查询键（note 的 first name），不带 Cookie。节点可以把它们和你的地址关联起来，也能看到你的 IP 地址。你的助记词和私钥从不发送。</li>
     </ol>
     <p>除此之外不会连接任何地方。该扩展不使用 Cookie，也不加载远程代码。</p>
     <h2 id="permissions">权限</h2>
     <ul>
       <li>storage：在你的设备上保存加密的钱包和你的设置。</li>
       <li>访问 blockbook.pearlresearch.ai / blockbook.testnet.pearlresearch.ai：与默认的 Pearl RPC 节点通信。</li>
-      <li>对其他 https:// 网站的可选访问权限：仅在你添加自己的 RPC 节点时才会请求，且只针对该网站。</li>
+      <li>对其他 https:// 网站的可选访问权限：仅在你添加自己的 RPC 节点或关联矿池时才会请求，且只针对该网站。</li>
     </ul>
     <h2 id="children">儿童</h2>
     <p>Akoya 并非面向 13 岁以下儿童，也不会在知情的情况下处理他们的数据。</p>
