@@ -25,7 +25,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/site.css?v=c5e71b8b16">
+  <link rel="stylesheet" href="/assets/site.css?v=a0ab0a6e37">
 </head>
 <body>
 <input type="checkbox" id="still" class="still-toggle" aria-label="暂停动画">
@@ -58,7 +58,7 @@
   <div class="wrap">
     <div>
       <div class="hero-top">
-        <span class="badge"><span class="dot"></span>v0.1 · 早期版本</span>
+        <span class="badge"><span class="dot"></span>v0.3 · 早期版本</span>
       </div>
       <h1 class="display"><span class="line intro"><span>你的私钥，</span></span><span class="line intro"><span>你的 <span class="satin">Pearl。</span></span></span></h1>
       <p class="lede">Akoya 是开源的 PRL Chrome 插件钱包。私钥从不离开你的浏览器，所有接触私钥的代码都公开可审计。</p>
@@ -106,37 +106,49 @@
       <div class="device">
         <div class="popup">
           <div class="bar">
-            <span class="acct"><span class="avatar">主</span>主钱包</span>
-            <span class="pill">Mainnet</span>
+            <span class="acct"><span class="avatar">矿</span>挖矿钱包</span>
+            <span class="pill"><i></i>Mainnet</span>
             <span class="grow"></span>
             <span class="ib spin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8M21 3v5h-5"/></svg></span>
             <span class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
           </div>
           <div class="balance">
             <div class="amount"><span class="odo n1 o1"><span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>,<span class="odo n2 o2"><span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span><span class="odo n8 o3"><span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span><span class="odo n4 o4"><span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>.<span class="odo n5 o5"><span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span><span class="unit">PRL</span></div>
-            <div class="sub">12.5 PRL 挖矿奖励成熟中<div class="mature"><i></i></div></div>
+            <div class="fiat">≈ ¥16,313.15</div>
+            <div class="pnl">今日 +¥1,858.16 (+12.85%)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></div>
+            <div class="mchip">今日挖矿 +115.38 PRL</div>
           </div>
           <div class="actions">
             <span class="action"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>接收</span>
             <span class="action"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>发送</span>
             <span class="action"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></span>复制地址</span>
           </div>
-          <div class="sect"><span>最近活动</span><span>全部 38</span></div>
+          <div class="list assets">
+            <div class="item">
+              <span class="tx mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 13.5 10.5"/><path d="M8.5 4.5c4.6-1.6 9.6 1.4 11 6"/><path d="M11.5 6.2l6.3 6.3"/></svg></span>
+              <div class="grow"><div class="t">Pearlhash</div><div class="m sans">9.36 PH/s · 32 张 GPU</div></div>
+              <div class="r"><div class="on"><i></i>4 台在线</div><div class="m sans">待结算 38.22 PRL</div></div>
+              <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span>
+            </div>
+            <div class="item">
+              <span class="tx nk">N</span>
+              <div class="grow"><div class="t">NOCK</div><div class="m sans">Nockchain · 只读</div></div>
+              <div class="v">1,232.61<small>NOCK</small></div>
+              <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span>
+            </div>
+          </div>
+          <div class="sect"><span>最近活动</span><span>全部 37</span></div>
+          <div class="day">今天</div>
           <div class="list">
             <div class="item fresh">
-              <span class="tx in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>
-              <div class="grow"><div class="t">收款</div><div class="m">prl1p…7hx2 · 刚刚</div></div>
-              <div class="v in">+250</div>
+              <span class="tx mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 13.5 10.5"/><path d="M8.5 4.5c4.6-1.6 9.6 1.4 11 6"/><path d="M11.5 6.2l6.3 6.3"/></svg></span>
+              <div class="grow"><div class="t">挖矿收益</div><div class="m">矿池 · prl1pk3…9wd2</div></div>
+              <div class="r"><div class="v in">+28.41<small>PRL</small></div><div class="m">07:54</div></div>
             </div>
             <div class="item">
-              <span class="tx mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5l5 5M3 21l6-1.5L19.5 9 15 4.5 4.5 15z"/></svg></span>
-              <div class="grow"><div class="t">挖矿奖励</div><div class="m">未成熟 · 2 小时前</div></div>
-              <div class="v">+12.5</div>
-            </div>
-            <div class="item">
-              <span class="tx out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>
-              <div class="grow"><div class="t">发送</div><div class="m">prl1p…d0ka · 3 天前</div></div>
-              <div class="v">−40.25</div>
+              <span class="tx mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 19.5 13.5 10.5"/><path d="M8.5 4.5c4.6-1.6 9.6 1.4 11 6"/><path d="M11.5 6.2l6.3 6.3"/></svg></span>
+              <div class="grow"><div class="t">挖矿收益</div><div class="m">矿池 · prl1pk3…9wd2</div></div>
+              <div class="r"><div class="v in">+25.83<small>PRL</small></div><div class="m">05:52</div></div>
             </div>
           </div>
           <div class="tabs">
@@ -146,7 +158,7 @@
           </div>
         </div>
       </div>
-      <p class="caption">界面示意，数据为虚构。</p>
+      <p class="caption">界面示意，数据为虚构。支持简体中文和英文。</p>
     </div>
   </div>
 </section>

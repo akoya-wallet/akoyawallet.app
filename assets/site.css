@@ -152,7 +152,7 @@ html:has(.still-toggle:checked) .reveal, html:has(.still-toggle:checked) .intro 
 .chip .ci { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: rgba(197, 193, 253, 0.14); color: var(--accent); }
 .chip .ci.g { background: rgba(79, 209, 161, 0.14); color: var(--green); }
 .chip .ci svg { width: 16px; height: 16px; }
-.chip.c1 { left: -6px; top: 110px; animation: bob 6s ease-in-out infinite; }
+.chip.c1 { left: -6px; top: 62px; animation: bob 6s ease-in-out infinite; }
 .chip.c2 { right: -34px; bottom: 74px; animation: bob 7s ease-in-out infinite -2.5s; }
 .caption { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--faint); }
 
@@ -175,10 +175,6 @@ html:has(.still-toggle:checked) .reveal, html:has(.still-toggle:checked) .intro 
 .odo > span > span { display: block; height: 1em; line-height: 1; }
 .odo.n1 { --to: -1em; } .odo.n2 { --to: -2em; } .odo.n4 { --to: -4em; } .odo.n5 { --to: -5em; } .odo.n8 { --to: -8em; }
 .odo.o2 > span { animation-delay: 0.3s; } .odo.o3 > span { animation-delay: 0.4s; } .odo.o4 > span { animation-delay: 0.5s; } .odo.o5 > span { animation-delay: 0.6s; }
-.popup .sub { margin: 12px auto 0; width: 220px; font-size: 12px; color: var(--amber); }
-.mature { position: relative; height: 4px; margin-top: 8px; border-radius: 4px; background: rgba(255, 196, 107, 0.14); overflow: hidden; }
-.mature i { position: absolute; inset: 0 28% 0 0; border-radius: 4px; background: linear-gradient(90deg, rgba(255, 196, 107, 0.6), var(--amber)); transform-origin: left; animation: grow 2.4s var(--ease) both 0.6s; overflow: hidden; }
-.mature i::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent); transform: translateX(-100%); animation: sheen 2.6s ease-in-out infinite 3s; }
 .popup .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 14px; }
 .popup .action { background: var(--surface); border-radius: 14px; padding: 12px 4px 10px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; }
 .popup .action .ic { width: 32px; height: 32px; border-radius: 50%; background: rgba(197, 193, 253, 0.14); color: var(--accent); display: grid; place-items: center; }
@@ -198,6 +194,27 @@ html:has(.still-toggle:checked) .reveal, html:has(.still-toggle:checked) .intro 
 .popup .m { color: var(--faint); font-size: 11px; font-family: var(--mono); }
 .popup .v { text-align: right; font-weight: 750; font-variant-numeric: tabular-nums; }
 .popup .v.in { color: var(--green); }
+.popup .pill { display: inline-flex; align-items: center; gap: 6px; }
+.popup .pill i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(79, 209, 161, 0.15); }
+/* value, today's P&L, mined-today chip: arrive after the odometer settles */
+.popup .fiat { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; animation: slide-in 0.8s var(--ease) both 1s; }
+.popup .pnl { display: inline-flex; align-items: center; gap: 2px; margin-top: 3px; padding: 3px 6px 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; animation: slide-in 0.8s var(--ease) both 1.15s, pnl-glow 6s ease-in-out infinite 3s; }
+.popup .pnl svg { width: 13px; height: 13px; opacity: 0.7; }
+.popup .mchip { width: fit-content; margin: 9px auto 0; padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1; color: var(--green); background: rgba(79, 209, 161, 0.12); animation: slide-in 0.8s var(--ease) both 1.3s; }
+/* mining pool card + NOCK row */
+.popup .assets { padding: 12px 14px 0; }
+.popup .assets .item:nth-child(1) { animation-delay: 1.4s; } .popup .assets .item:nth-child(2) { animation-delay: 1.55s; }
+.popup .r { text-align: right; flex-shrink: 0; }
+.popup .on { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; color: var(--green); }
+.popup .on i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: ping-g 2.4s ease-out infinite 2s; }
+.popup .m.sans { font-family: var(--font); }
+.popup .assets .m { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.popup .tx.nk { color: var(--accent); background: rgba(197, 193, 253, 0.14); font-weight: 800; font-size: 14px; }
+.popup .v small { margin-left: 3px; font-size: 10px; font-weight: 600; color: var(--muted); }
+.popup .chev { display: grid; color: var(--faint); margin-left: -4px; }
+.popup .chev svg { width: 14px; height: 14px; }
+.popup .day { padding: 0 18px 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+.popup .list:not(.assets) .item:nth-child(1) { animation-delay: 1.75s; } .popup .list:not(.assets) .item:nth-child(2) { animation-delay: 1.9s; }
 .popup .tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding: 8px 0 10px; }
 .popup .tabs span { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; color: var(--faint); }
 .popup .tabs span.on { color: var(--accent); }
@@ -455,6 +472,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 28px; border-top: 1px solid va
 @keyframes odo { from { transform: translateY(0); } }
 @keyframes grow { from { transform: scaleX(0); } }
 @keyframes slide-in { from { opacity: 0; transform: translateY(14px); } }
+@keyframes pnl-glow { 0%, 100% { background: transparent; } 35%, 60% { background: rgba(79, 209, 161, 0.12); } }
 @keyframes fresh { 0%, 100% { opacity: 0; } 15%, 45% { opacity: 1; } }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes rise { from { opacity: 0; transform: translateY(48px); } }
@@ -501,8 +519,10 @@ footer .legal { grid-column: 1 / -1; padding-top: 28px; border-top: 1px solid va
   .flow-foot { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .flow-foot p:last-child { text-align: left; }
   .popup { width: 300px; }
-  .chip.c1 { left: -4px; top: 70px; }
-  .chip.c2 { right: -4px; bottom: 110px; }
+  .chip.c1 { left: -4px; top: 2px; }
+  .chip.c2 { display: none; }
+  .popup .assets .m { font-size: 10px; }
+  .popup .assets .item { gap: 8px; padding: 9px 9px 9px 10px; }
   .orb { width: 270px; height: 270px; left: 38%; }
   .bento, .steps, .road { grid-template-columns: minmax(0, 1fr); }
   .card.wide { grid-column: auto; grid-template-columns: minmax(0, 1fr); }
