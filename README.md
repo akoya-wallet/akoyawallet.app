@@ -42,6 +42,6 @@ Rule. Browsers enforce both.
 
 - After editing `assets/site.css`, change the `?v=` value on its `<link>` in `index.html`, `zh/index.html` and
   `404.html`. Browsers cache CSS for 10 minutes, so new HTML with old CSS renders broken.
-- When the Chrome Web Store listing is live, put the official extension ID and store link in the Install and
-  Stay safe sections, on both pages.
+- The Chrome Web Store listing is live (extension ID `jongehkghokkejeaebipgkkichfegccp`). The hero and closing
+  buttons, the Install steps, and the Stay safe list link to it on both pages. If the ID ever changes, update all of them.
 - Renew `Expires` in `.well-known/security.txt` before 2027-10-14.
